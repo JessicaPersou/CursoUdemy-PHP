@@ -57,4 +57,9 @@ $associativo = [
     'casada' => true,
 ];
 
+// verificação
 print_r($associativo);
+echo"<br>";
+if($associativo > 18){
+    echo "$associativo[nome] +  é maior de idade";
+}
