@@ -1,5 +1,7 @@
 <?php
 
+//conferindo os tipos de dados 
+
 //conferir se o arquivo é um inteiro
 if (is_int(5)){
     echo "É um número inteiro! ";
@@ -61,5 +63,13 @@ $associativo = [
 print_r($associativo);
 echo"<br>";
 if($associativo > 18){
-    echo "$associativo[nome] +  é maior de idade";
+    echo "$associativo[nome] é maior de idade";
+}
+
+//dado null
+echo"<br>";
+$null = null;
+
+if (is_null($null)){
+    echo "É um dado nulo!";
 }
