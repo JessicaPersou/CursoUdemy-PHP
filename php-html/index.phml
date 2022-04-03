@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inclusão de Código</title>
+</head>
+<body>
+    <?php // _once impede que o arquivo seja adicionado mais de uma vez
+    require_once "teste.php"; // se o include aparecer warning na tela é pq o arquivo não foi encontrado // require gera um erro fatal caso o aquivo não exista 
+    ?>
+    <?php include_once __DIR__ . "/../php-basic/operacao.php"; ?>
+
+    <p>Atalhos: Short Tags</p>
+    <?php echo "Testando"; ?>
+
+    <p>Exibindo Conteúdo:</p>
+<?php
+
+$nome = "Jessica";
+
+?>
+    <form action="">
+        <div>
+            <input type="text" value="<?= $nome; ?>" >
+        </div>
+    </form>
+
+
+</body>
+</html>
