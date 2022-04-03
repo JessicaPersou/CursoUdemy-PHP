@@ -89,3 +89,16 @@ for($i=0;$i<10;$i++){
     echo"<br>";
     echo $i;
 }
+
+echo"<br>";
+echo "LOOP FOREACH: <br>";
+$nomes = ["Matheus", "João", "Pedro", "Maria"];
+
+
+
+foreach($nomes as $nome) {
+  echo "O nome do índice atual é $nome <br>";
+  if($nome == "Matheus") {
+    echo"<br>";
+  }
+}
