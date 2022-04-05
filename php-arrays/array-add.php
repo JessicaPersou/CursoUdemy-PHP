@@ -44,8 +44,6 @@ $soma = 6;
 print_r($criando);
 echo "<br>";
 
-
-
 for($i=0;$i<count($criando);$i++){
     $soma=$criando[$i]+6;;
     echo "<br>" . $soma;
@@ -58,4 +56,25 @@ if($soma >= 30){
     }
 
 }
+echo "<br>";
+echo "<br>";
+echo "<br>";
 
+//testando count()
+echo count($ar);
+echo"<br>";
+echo count($arrAss);
+echo"<br>";
+echo count($rapido);
+
+//array multidimencional
+$arrM=[[1,2,3],
+[4,5,6],
+[7,8,9]];
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo ($arrM[1][1]) ."<br>";
+
+echo count($arrM[2]) . "<br>";
