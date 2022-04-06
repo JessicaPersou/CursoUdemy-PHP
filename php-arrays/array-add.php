@@ -78,3 +78,10 @@ echo "<br>";
 echo ($arrM[1][1]) ."<br>";
 
 echo count($arrM[2]) . "<br>";
+
+//criando várias variáveis
+
+$pessoa = ["jessica", 29, "programadora"];
+list($nome, $idade,$profissao) = $pessoa;
+
+echo $nome;
