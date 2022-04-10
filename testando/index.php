@@ -26,30 +26,35 @@ try {
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = '16c48253cfc82c';                     //SMTP username
     $mail->Password   = '40e14a8c21f163';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+   // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 2525;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-    
+     //Attachments
+     //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add somente o arquivo
+     $mail->addAttachment('./file/euSou.zip', 'frase-do-dia.zip');  //add arquivo mais o nome
+
     //Recipients
-    $mail->setFrom('testecapitalconsig@gmail.com', 'atendimento');
-    $mail->addAddress('jessica.persou@gmail.com', 'Jessica Sousa');     //Add a recipient
+    $mail->setFrom('jessica.persou@gmail.com', 'Testando');
+    $mail->addAddress('jessica.psousa@outlook.com', 'Jessica Sousa');     //Add a recipient
     //$mail->addAddress('ellen@example.com');               //Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
-    //$mail->addCC('cc@example.com');
+   // $mail->addCC('adriano.fds@outlook.com'); // email como copia
     //$mail->addBCC('bcc@example.com'); 
     
     //content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Titulo do E-mail';
     $mail->Body    = 'Aprendendo a enviar e-mail com <b>PHP!</b><br>.'; //aqui pode ter tags html
-    $mail->AltBody = 'Aprendendo a enviar e-mail com PHP. \nSegunda Linha!';//nessa parte somente texto
+    $mail->AltBody = 'Se você recebeu esse e-mail, é apenas um teste, fique tranquilo. è a Jessica Sousa. \nSegunda Linha!';//nessa parte somente texto
+
+    
 
     $mail->send();
 
     echo 'E-mail enviado com sucesso!';
 } catch (Exception $e) {
     echo "ERRO: E-mail não enviado. Error PHPMailer: {$mail->ErrorInfo}"; //não colocar esse info pro usuario
-    echo "ERRO: E-mail não enviado. Error PHPMailer;
+    echo "ERRO: E-mail não enviado. Error PHPMailer";
 }
     ?>
 
