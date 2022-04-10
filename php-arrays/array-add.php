@@ -168,3 +168,116 @@ echo'<br>';
 print_r($remove);
 echo'<br>';
 
+//usando extract usando linha 113
+$arrayAs =[
+    'cor' => 'azul',
+    'porta' => '4',
+    'carroceria' => 'cd'
+]; 
+
+extract($arrayAs); // cria variavel a partir da chave do array
+
+echo "$cor <br>";
+echo "$porta <br>";
+echo "$carroceria <br>";
+
+
+echo "<br>";
+
+$modelo = "a71";
+$capacidade = 128;
+$color = "branca";
+$bom = true;
+
+$varia = compact("modelo", 'capacidade', 'color', 'bom'); // cria array a partir do valor das variaveis já existentes
+
+print_r($varia);
+
+echo'<br>';
+echo'<br>';
+foreach($varia as $item => $value){
+    echo "$item: $value <br>";
+}
+
+//array_reduce reduz o array em um unico valor
+$redu =[1,2,3,4,5,6,7,8,9];
+
+function somando($n1,$n2){
+    return $n1 + $n2;
+}
+
+$res = array_reduce($redu,"somando"); // primeiro argumento o array e o segundo a função 
+
+echo "<br>";
+echo $res;
+
+ if(in_array(2,$redu)){
+     echo "<br> Tem o item";
+ }else{
+     echo "<br> Não tem o item";
+ }
+
+
+//  crescente pelo valor do item
+ $ordem =[19,1,23,548,254,0,-1];
+
+ sort($ordem);
+
+echo "<br>";
+print_r($ordem); 
+echo "<br>";
+
+//valor decrescente pelo item
+
+rsort($ordem);
+print_r($ordem); 
+echo "<br>";
+
+//valor crescente pela chave
+
+arsort($varia);
+print_r($varia); 
+echo "<br>";
+
+
+// valor descrescente pela chave
+ksort($varia);
+print_r($varia); 
+echo "<br>";
+
+// array reverso, funciona pra string tbm, do ultimo pro primeiro e vice versa
+
+array_reverse($ordem);
+
+echo "<br>";
+print_r($ordem); 
+echo "<br>";
+
+//ordem aleatoria
+shuffle($ordem);
+echo "<br>";
+print_r($ordem); 
+echo "<br>";
+
+
+//função de soma de array
+$sum = array_sum($ordem);
+
+echo "<br>";
+print_r($sum); 
+echo "<br>";
+
+
+//unindo os arrays já existentes com merge em um array unico
+
+$mergeA = array_merge($varia, $ordem, $redu);
+print_r($mergeA);
+echo "<br>";
+
+
+//função de soma de array
+$diff = array_diff($ordem, $varia); // diferença do primeiro em relação ao segundo array
+
+echo "<br>";
+print_r($diff); 
+echo "<br>";
