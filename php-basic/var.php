@@ -33,3 +33,11 @@ echo $y;
 echo "<br>";
 echo $x;
 echo "<br>Os dois valores são alterados, mesmo mudando apenas um valor!";
+
+//verificando se a variavel existe 
+
+if(isset($ar)){
+    echo "<br> A variavel existe! ISSET";
+}else{
+    echo "<br> A variavel não existe! ISSET";
+}

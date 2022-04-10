@@ -13,7 +13,7 @@ print_r($arr);
 echo "<br>";
 
 //array associativo
-$arrAsso = [];
+$arrAss = [];
 print_r($arrAss);
 echo "<br>";
 $arrAss ["car"] = "gm";
@@ -63,7 +63,7 @@ echo "<br>";
 //testando count()
 echo count($ar);
 echo"<br>";
-echo count($arrAss);
+echo count($arr);
 echo"<br>";
 echo count($rapido);
 
@@ -83,5 +83,88 @@ echo count($arrM[2]) . "<br>";
 
 $pessoa = ["jessica", 29, "programadora"];
 list($nome, $idade,$profissao) = $pessoa;
+echo "<br>";
+echo "$nome  <br>";
+echo "<br>";
 
-echo $nome;
+// array slice
+
+$carro = ["Jaguar", 3.0 ,"Azul",18 , "Teto Solar", "Automático" ]; 
+
+list($modelo, $potencia, $cor, $aro, $opicional, $cambio) = $carro;
+
+echo " $modelo <br>";
+echo " $potencia <br>";
+echo " $cor <br>";
+echo " $aro <br>";
+echo " $opicional <br>";
+echo " $cambio <br>";
+
+print_r($carro);
+
+// dividindo array
+$divide=range(1,20);
+$arr = array_chunk($divide,5);
+echo "<br>";
+print_r($arr);
+echo "<br>";
+
+
+//array keys
+$arrayAss =[
+    'marca' => 'chevrolet',
+    'motor' => '1,4',
+    'cambio' => 'manual'
+]; 
+
+echo "<br>";
+$chaves = array_keys($arrayAss); //chaves dos arrays
+print_r($chaves);
+echo "<br>";
+
+//array valores
+
+$val = array_values($arrayAss); // valores dos arrays
+print_r($val);
+echo "<br>";
+
+//checando se a chave existe
+
+if(array_key_exists('marca',$arrayAss)){
+    echo " a chave existe!<br>";
+}else{
+    echo " a chave não existe!<br>";
+}
+
+if(array_key_exists('nome',$arrayAss)){
+    echo " a chave existe!<br>";
+}else{
+    echo " a chave não existe!<br>";
+}
+
+// verificando com ISSET se existe 
+if(isset($arrayAss['motor'])){
+    echo " a chave existe!<br>";
+}else{
+    echo " a chave não existe!<br>";
+}
+
+if(isset($arrayAss['cor'])){
+    echo " a chave existe!<br> (ISSET)";
+}else{
+    echo " a chave não existe!<br> (ISSET)";
+}
+
+
+//resgatando elementos do array
+$resgate =[1,2,3,4];
+
+$remove = array_slice($resgate,1,2);
+echo'<br>';
+print_r($resgate);
+echo'<br>';
+
+
+print_r($remove);
+echo'<br>';
+
