@@ -22,12 +22,12 @@ try {
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.mailtrap.io';                     //Set the SMTP server to send through
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = '16c48253cfc82c';                     //SMTP username
-    $mail->Password   = '40e14a8c21f163';                               //SMTP password
+    $mail->Username   = 'jessica.persou@gmail.com';                     //SMTP username
+    $mail->Password   = 'edkubhmzdcfiojae';                               //SMTP password
    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 2525;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
      //Attachments
      //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add somente o arquivo
