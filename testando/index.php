@@ -27,7 +27,7 @@ try {
     $mail->Username   = 'jessica.persou@gmail.com';                     //SMTP username
     $mail->Password   = 'edkubhmzdcfiojae';                               //SMTP password
    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
      //Attachments
      //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add somente o arquivo
@@ -36,6 +36,8 @@ try {
     //Recipients
     $mail->setFrom('jessica.persou@gmail.com', 'Testando');
     $mail->addAddress('jessica.psousa@outlook.com', 'Jessica Sousa');     //Add a recipient
+   // $mail->addAddress('adriano.fds@outlook.com', 'Adriano Siqueira');     //Add a recipient
+ //   $mail->addAddress('erikasilveira00@hotmail.com', 'Erika Silveira');     //Add a recipient
     //$mail->addAddress('ellen@example.com');               //Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
    // $mail->addCC('adriano.fds@outlook.com'); // email como copia
@@ -43,9 +45,9 @@ try {
     
     //content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Titulo do E-mail';
-    $mail->Body    = 'Aprendendo a enviar e-mail com <b>PHP!</b><br>.'; //aqui pode ter tags html
-    $mail->AltBody = 'Se você recebeu esse e-mail, é apenas um teste, fique tranquilo. è a Jessica Sousa. \nSegunda Linha!';//nessa parte somente texto
+    $mail->Subject = 'Boa Noite Amigos!';
+    $mail->Body = 'Estou aprendendo a enviar e-mail com <b>PHPMailer!</b><br>.'; //aqui pode ter tags html
+    $mail->Body = 'Se você recebeu esse e-mail, é apenas um teste, fique tranquilo. é a Jessica S. e o anexo, é apenas uma mensagem positiva!!! \n';//nessa parte somente texto
 
     
 
