@@ -9,6 +9,10 @@ class Pessoa{
         echo "walking dead <br>";
     }
 
+	/**
+	 */
+	function __construct() {
+	}
 }
 
 $jessica = new Pessoa();
