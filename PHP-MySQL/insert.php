@@ -10,12 +10,12 @@ $db = "cursophp";
 $conn = new mysqli($host,$user,$pass,$db);
 
 //descrevaa os dados que quer adicionar em variaveis
-$table = "teste";
-$nome = "Luka";
-$sobrenome = "Doncic";
+$table = "usuario";
+//$nome = "";
+//$sobrenome = "Garay";
 
 //inserir informações no banco de dados de uma tabela criada
-$q = "INSERT INTO $table (nome, sobrenome) VALUES ('$nome', '$sobrenome')";
+//$q = "INSERT INTO $table (nome, sobrenome) VALUES ('$nome', '$sobrenome')";
 
 // chamando a query para criar
 $conn->query($q); 

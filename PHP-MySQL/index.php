@@ -27,7 +27,7 @@ if($conn->connect_errno){
 
 
 //criando uma tabela
-$create = "CREATE TABLE teste (nome VARCHAR(100), sobrenome VARCHAR(100))";
+$create = "CREATE TABLE usuario (nome VARCHAR(100), sobrenome VARCHAR(100))";
 
 
 //para dropar executa o comando a seguir e comenta o comando acima 
