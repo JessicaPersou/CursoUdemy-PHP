@@ -42,12 +42,12 @@ $num_clientes = $query_clientes->num_rows;
 
                         $tel = "Não Informado!";
                         if(!empty($cliente['tel'])){
-                            $tel = formatar_tel($cliente['tel']);
+                            $tel = f_tel($cliente['tel']);
                         }
 
                         $d_nascimento = "Não Informado!";
                         if(!empty($cliente['d_nascimento'])){
-                            $d_nascimento = formatar_data($cliente['d_nascimento']);
+                            $d_nascimento = f_data($cliente['d_nascimento']);
                         }
 
                         $data = date("d/m/Y H:i", strtotime($cliente['data']));
@@ -62,7 +62,7 @@ $num_clientes = $query_clientes->num_rows;
                             <td><?php echo $data ?></td>
                             <td>
                                 <button><a href="editar_cliente.php?id=<?php echo $cliente['id']; ?>">Editar</a></button>
-                                <button><a href="delete_cliente.php?id=<?php echo $cliente['id']; ?>">Deletar</a></button>
+                                <button><a href="deletar_cliente.php?id=<?php echo $cliente['id']; ?>">Deletar</a></button>
                             </td>
                         </tr> 
                 <?php

@@ -71,7 +71,7 @@
         if($ok){
 
             // LIMPA O QUE FOI DIGITADO NOS CAMPOS
-            echo "Cadastro autalizado com Sucesso!";
+            echo "Cadastro atualizado com Sucesso!";
             unset($_POST); 
         }
     }
