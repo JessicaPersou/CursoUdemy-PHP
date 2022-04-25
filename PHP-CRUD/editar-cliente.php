@@ -81,7 +81,6 @@
         $sql_cliente = "SELECT * FROM clientes WHERE id = '$id'";
         $query_cliente = $conn->query($sql_cliente) or die($conn->error);
         $cliente = $query_cliente->fetch_assoc();
-        var_dump($cliente);
 
 
 ?>

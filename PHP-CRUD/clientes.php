@@ -9,7 +9,7 @@ $num_clientes = $query_clientes->num_rows;
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,10 +59,10 @@ $num_clientes = $query_clientes->num_rows;
                             <td><?php echo $d_nascimento; ?></td>
                             <td><?php echo $cliente['email']; ?></td>
                             <td><?php echo $tel; ?></td>
-                            <td><?php echo $data ?></td>
+                            <td><?php echo $data; ?></td>
                             <td>
-                                <button><a href="editar_cliente.php?id=<?php echo $cliente['id']; ?>">Editar</a></button>
-                                <button><a href="deletar_cliente.php?id=<?php echo $cliente['id']; ?>">Deletar</a></button>
+                                <button><a href="editar-cliente.php?id=<?php echo $cliente['id']; ?>">Editar</a></button>
+                                <button><a href="deletar-cliente.php?id=<?php echo $cliente['id']; ?>">Deletar</a></button>
                             </td>
                         </tr> 
                 <?php

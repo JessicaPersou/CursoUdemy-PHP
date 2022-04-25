@@ -85,19 +85,19 @@
     <form method="POST" action="">
         <div>
             <label for="nome">Nome:</label>
-            <input value=" <?php if(isset($_POST['nome'])) echo $POST['nome']; ?>" name="nome" type="text">  
+            <input value=" <?php if(isset($_POST['nome'])) echo $_POST['nome']; ?>" name="nome" type="text">  
         </div>
         <div>
             <label for="d_nascimento">Data de Nascimento:</label>
-            <input value=" <?php if(isset($_POST['d_nasicmento'])) echo $POST['d_nascimento']; ?>"name="d_nascimento" type="text">  
+            <input value=" <?php if(isset($_POST['d_nasicmento'])) echo $_POST['d_nascimento']; ?>"name="d_nascimento" type="text">  
         </div>
         <div>
             <label for="email">E-mail:</label>
-            <input value=" <?php if(isset($_POST['email'])) echo $POST['email']; ?>"name="email" type="email">  
+            <input value=" <?php if(isset($_POST['email'])) echo $_POST['email']; ?>"name="email" type="email">  
         </div>
         <div>
             <label for="tel">Telefone:</label>
-            <input value=" <?php if(isset($_POST['tel'])) echo $POST['tel']; ?>" placeholder="(11) 98765-4321" name="tel" type="text">  
+            <input value=" <?php if(isset($_POST['tel'])) echo $_POST['tel']; ?>" placeholder="(11) 98765-4321" name="tel" type="text">  
         </div>
         <div>
             <button type="submit">Salvar Cliente</button>  

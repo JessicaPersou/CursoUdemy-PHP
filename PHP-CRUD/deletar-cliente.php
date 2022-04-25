@@ -30,12 +30,9 @@ var_dump($_POST);
 </head>
 <body>
     <h1>Tem certeza que deseja deletar esse cadastro?</h1>
-    <button><a href="clientes.php">NÃO</a></button>
-        
     <form method="POST">
+        <button><a href="clientes.php">Não</a></button>
         <button name ="confirmar" value ="1" type ="submit" >Confirmar</button>
-    </form>
-            
-        
+    </form> 
 </body>
 </html>
