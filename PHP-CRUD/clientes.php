@@ -14,13 +14,19 @@ $num_clientes = $query_clientes->num_rows;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oxygen:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Clientes Cadastrados</title>
 </head>
 <body>
+    <header class="header">
     <h1>Clientes Cadastrados</h1>
     <p>Estes são os clientes que já foram cadastrados no sistema:</p>
-    <table border="1" cellpadding="10">
+    </header>
+    <main class="main">   
+    <table class="form" border="1" cellpadding="10">
         <thead>
             <th>ID</th>
             <th>Nome</th>
@@ -71,6 +77,9 @@ $num_clientes = $query_clientes->num_rows;
          }?>
         </tbody>
     </table>
-
+</main> 
 </body>
+    <footer class="footer">
+        © Jessica - 2022
+    </footer>
 </html>

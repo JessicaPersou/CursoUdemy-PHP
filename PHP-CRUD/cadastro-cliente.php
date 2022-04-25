@@ -60,13 +60,6 @@
         VALUES ('$nome', '$d_nascimento', '$email', '$tel', NOW())";
         $ok = $conn->query($sql_code) or die($conn->error); 
 
-        // SE ESTIVER TUDO CERTO APARECE A MENSAGEM
-        if($ok){
-
-            // LIMPA O QUE FOI DIGITADO NOS CAMPOS
-            echo "Cliente Cadastrado com Sucesso!";
-            unset($_POST); 
-        }
     }
 }
 ?>
@@ -84,12 +77,12 @@
     <title>Cadastro de Clientes</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Cadastro de Clientes</h1>  
     </header>
-    <main>
-        <a href="clientes.php">Voltar p/ Clientes.</a> <!--adicionar o arquivo clientes.php-->
-        <form method="POST" action="">
+    <main class="main">
+    <form class="form" method="POST" action="">
+        <button><a href="clientes.php">Voltar p/ Clientes.</a></button>
             <div>
                 <label for="nome">Nome:</label>
                 <input value=" <?php if(isset($_POST['nome'])) echo $_POST['nome']; ?>" name="nome" type="text">  
@@ -109,10 +102,19 @@
             <div>
                 <button type="submit">Salvar Cliente</button>  
             </div>
+            <div>
+                <?php
+                    // SE ESTIVER TUDO CERTO APARECE A MENSAGEM
+                    if($ok){
+                    // LIMPA O QUE FOI DIGITADO NOS CAMPOS
+                    echo "<h2>Cliente Cadastrado com Sucesso!</h2>";
+                    unset($_POST); 
+                }?>
+            </div>
         </form>
     </main>
-    <footer>
+    </body>
+    <footer class="footer">
         © Jessica - 2022
     </footer>
-</body>
 </html>

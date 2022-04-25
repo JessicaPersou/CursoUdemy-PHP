@@ -91,13 +91,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oxygen:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Cadastro de Clientes</title>
 </head>
 <body>
     <h1>Cadastro de Clientes</h1>
-    <a href="clientes.php">Voltar p/ Clientes.</a> <!--adicionar o arquivo clientes.php-->
-    <form method="POST" action="">
+     <!--adicionar o arquivo clientes.php-->
+    <form class="form" method="POST" action="">
+        <button><a href="clientes.php">Voltar p/ Clientes.</a></button>
         <div>
             <label for="nome">Nome:</label>
             <input value=" <?php echo $cliente['nome']; ?>" name="nome" type="text">  
