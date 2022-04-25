@@ -77,31 +77,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Cadastro de Clientes</title>
 </head>
 <body>
-    <h1>Cadastro de Clientes</h1>
-    <a href="clientes.php">Voltar p/ Clientes.</a> <!--adicionar o arquivo clientes.php-->
-    <form method="POST" action="">
-        <div>
-            <label for="nome">Nome:</label>
-            <input value=" <?php if(isset($_POST['nome'])) echo $_POST['nome']; ?>" name="nome" type="text">  
-        </div>
-        <div>
-            <label for="d_nascimento">Data de Nascimento:</label>
-            <input value=" <?php if(isset($_POST['d_nasicmento'])) echo $_POST['d_nascimento']; ?>"name="d_nascimento" type="text">  
-        </div>
-        <div>
-            <label for="email">E-mail:</label>
-            <input value=" <?php if(isset($_POST['email'])) echo $_POST['email']; ?>"name="email" type="email">  
-        </div>
-        <div>
-            <label for="tel">Telefone:</label>
-            <input value=" <?php if(isset($_POST['tel'])) echo $_POST['tel']; ?>" placeholder="(11) 98765-4321" name="tel" type="text">  
-        </div>
-        <div>
-            <button type="submit">Salvar Cliente</button>  
-        </div>
-    </form>
+    <header>
+        <h1>Cadastro de Clientes</h1>  
+    </header>
+    <main>
+        <a href="clientes.php">Voltar p/ Clientes.</a> <!--adicionar o arquivo clientes.php-->
+        <form method="POST" action="">
+            <div>
+                <label for="nome">Nome:</label>
+                <input value=" <?php if(isset($_POST['nome'])) echo $_POST['nome']; ?>" name="nome" type="text">  
+            </div>
+            <div>
+                <label for="d_nascimento">Data de Nascimento:</label>
+                <input value=" <?php if(isset($_POST['d_nasicmento'])) echo $_POST['d_nascimento']; ?>"name="d_nascimento" type="text">  
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input value=" <?php if(isset($_POST['email'])) echo $_POST['email']; ?>"name="email" type="email">  
+            </div>
+            <div>
+                <label for="tel">Telefone:</label>
+                <input value=" <?php if(isset($_POST['tel'])) echo $_POST['tel']; ?>" placeholder="(11) 98765-4321" name="tel" type="text">  
+            </div>
+            <div>
+                <button type="submit">Salvar Cliente</button>  
+            </div>
+        </form>
+    </main>
+    <footer>
+        © Jessica - 2022
+    </footer>
 </body>
 </html>
