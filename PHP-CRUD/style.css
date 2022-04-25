@@ -57,3 +57,21 @@ body{
     align-items: center;
     box-shadow: 0px 0px 15px 0px rgb(0, 0, 0);
 }
+
+.form {
+    background: #FFFFFF;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2)
+  }
+
+input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    font-size: 14px;
+  }

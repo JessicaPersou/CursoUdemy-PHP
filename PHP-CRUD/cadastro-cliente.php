@@ -80,9 +80,10 @@
     <header class="header">
         <h1>Cadastro de Clientes</h1>  
     </header>
+  
     <main class="main">
     <form class="form" method="POST" action="">
-        <button><a href="clientes.php">Voltar p/ Clientes.</a></button>
+       
             <div>
                 <label for="nome">Nome:</label>
                 <input value=" <?php if(isset($_POST['nome'])) echo $_POST['nome']; ?>" name="nome" type="text">  
@@ -101,6 +102,7 @@
             </div>
             <div>
                 <button type="submit">Salvar Cliente</button>  
+                <button><a href="clientes.php">Voltar</a></button>
             </div>
             <div>
                 <?php

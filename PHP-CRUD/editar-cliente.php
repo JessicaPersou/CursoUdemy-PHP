@@ -98,10 +98,12 @@
     <title>Cadastro de Clientes</title>
 </head>
 <body>
+    <header class="header">
     <h1>Cadastro de Clientes</h1>
+    </header>
      <!--adicionar o arquivo clientes.php-->
+     <main class="main">
     <form class="form" method="POST" action="">
-        <button><a href="clientes.php">Voltar p/ Clientes.</a></button>
         <div>
             <label for="nome">Nome:</label>
             <input value=" <?php echo $cliente['nome']; ?>" name="nome" type="text">  
@@ -119,8 +121,13 @@
             <input value=" <?php if(!empty($cliente['tel'])) echo f_tel($cliente['tel']); ?>" placeholder="(11) 98765-4321" name="tel" type="text">  
         </div>
         <div>
-            <button type="submit">Salvar Modificação</button>  
+            <button type="submit">Salvar</button>  
+            <button><a href="clientes.php">Voltar</a></button>
         </div>
     </form>
+</main>
 </body>
+    <footer class="footer">
+        © Jessica - 2022
+    </footer>
 </html>

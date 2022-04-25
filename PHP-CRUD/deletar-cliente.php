@@ -33,10 +33,17 @@ var_dump($_POST);
     <title>Deletar Clientes</title>
 </head>
 <body>
+    <header class="header">
     <h1>Tem certeza que deseja deletar esse cadastro?</h1>
+    </header>
+    <main class="main">
     <form method="POST">
         <button><a href="clientes.php">Não</a></button>
         <button name ="confirmar" value ="1" type ="submit" >Confirmar</button>
     </form> 
+</main>
 </body>
+<footer class="footer">
+        © Jessica - 2022
+    </footer>
 </html>
