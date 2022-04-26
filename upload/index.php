@@ -9,7 +9,7 @@ if(isset($_FILES['arquivo'])){
         if($arquivo['size']>2097152)
             die("Arquivo muito grande, Max: 2MB");
 
-            $path = "arquivos/";
+            $pasta = "arquivos/";
             $tmp = $arquivo['name'];
             $fName = uniqid();
             $extensao = strtolower(pathinfo($tmp, PATHINFO_EXTENSION));
@@ -17,12 +17,14 @@ if(isset($_FILES['arquivo'])){
             if($extensao != "jpg" && $extensao != "png")
                 die("Tipo de arquivo diferente, verifique a extensão");
               
-        
-    $ok = move_uploaded_file($arquivo["tmp_name"], $path . $fName . "." . $extensao);
+    $path = $pasta . $fName . "." . $extensao;  
+    $ok = move_uploaded_file($arquivo["tmp_name"], $path);
 
-    if($ok)
-        echo "Arquivo enviado com sucesso. Clique para <a target=\"_blank\" href=\"arquivos/$fName.$extensao\">Abrir!</a>";
-     else
+    if($ok){
+        $conn->query("INSERT INTO arquivos (nome , path) VALUES ('$tmp', '$path')") or die($conn->error);
+            echo "Arquivo enviado com sucesso.";
+        // Clique para <a target=\"_blank\" href=\"arquivos/$fName.$extensao\">Abrir!</a>";
+    }else
         echo "Falha, tente novamente";
     
 }
