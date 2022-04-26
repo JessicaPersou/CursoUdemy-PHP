@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['email']))
+if(isset($_POST['email'])){
 
     include("conn.php");
     
@@ -12,18 +12,17 @@ if(isset($_POST['email']))
 
     $user = $sql_exec->fetch_assoc();
 
-        if(password_verify($senha, $user['senha'])){
-           if(isset($_SESSION)){
-                echo "Falha ao logar, verifique e-mail e senha!";
-            } else {
-                session_start();
-                $_SESSION['user'] = $user['id'];
-                header("Location: cadastro.php");
-            }
-                }else{
-                    echo "Errou!";
-                }
-    
+    if(password_verify($senha, $user['senha']))
+    {
+        if(!isset($_SESSION)){
+            session_start();
+            $_SESSION['user'] = $user['id'];
+            header("Location: cadastro.php");
+        }else{
+            echo "Falha ao logar, verifique e-mail e senha!";
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +49,7 @@ if(isset($_POST['email']))
         <label for="senha">Senha</label>
         <input type="text" name="senha">
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit"><a href="login.php">Cadastrar</a></button>
     </form>    
 </body>
     <footer class="footer">

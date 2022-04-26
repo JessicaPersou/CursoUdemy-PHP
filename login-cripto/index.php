@@ -1,5 +1,7 @@
 <?php
 
+include("conn.php");
+
 if(!isset($_SESSION))
     session_start();
 
@@ -8,7 +10,7 @@ if(!isset($_SESSION['user']))
 
 if(isset($_POST['email'])){
 
-    include("conn.php");
+    
 
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
     $email = $_POST['email'];
@@ -50,7 +52,7 @@ if(isset($_POST['email'])){
     <footer class="footer">
             © Jessica - 2022
     </footer>
-</html>
+
 
 
 <?php
