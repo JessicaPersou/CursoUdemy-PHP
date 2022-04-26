@@ -1,29 +1,22 @@
 <?php
 
-if(isset($_POST['email']))
+if(!isset($_SESSION))
+    session_start();
+
+if(!isset($_SESSION['user']))
+    die('Você não está logado!<a href="login.php">Clique aqui</a> para logar.');
+
+if(isset($_POST['email'])){
 
     include("conn.php");
-    
+
+    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
     $email = $_POST['email'];
-    $senha = ($_POST['senha']);
-
-    $sql_code = "SELECT * FROM acesso WHERE email = '$email' LIMIT 1";
-    $sql_exec = $conn->query($sql_code) or die ($conn->error);
-
-    $user = $sql_exec->fetch_assoc();
-
-        if(password_verify($senha, $user['senha'])){
-           if(isset($_SESSION)){
-                echo "Falha ao logar, verifique e-mail e senha!";
-            } else {
-                session_start();
-                $_SESSION['user'] = $user['id'];
-                header("Location: cadastro.php");
-            }
-                }else{
-                    echo "Errou!";
-                }
     
+    $conn->query("INSERT INTO acesso (email, senha) VALUES ('$email','$senha')");
+
+    
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,13 +29,13 @@ if(isset($_POST['email']))
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100;300;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Login</title>
+    <title>Cadastrar</title>
 </head>
 
 <body class="body">
     <form class="form" method="POST">
 
-        <h2>Login</h2>
+        <h2>Cadastrar Senha</h2>
 
         <label for="email">Email</label>
         <input type="email" name="email">
@@ -52,8 +45,21 @@ if(isset($_POST['email']))
 
         <button type="submit">Cadastrar</button>
     </form>    
+    <p><a href="logout.php">Sair</a></p>
 </body>
     <footer class="footer">
-        © Jessica - 2022
+            © Jessica - 2022
     </footer>
 </html>
+
+
+<?php
+//TESTANDO FUNÇÕES
+/*$senha=1234;
+$md5 = md5($senha);//nunca usar md5
+
+$hash = password_hash($senha, PASSWORD_DEFAULT);
+
+
+*/
+?>
