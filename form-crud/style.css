@@ -1,0 +1,73 @@
+body, html{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('/form-crud/assets/soothing-nature.jpg');
+    background-repeat: no-repeat;
+    height: 100%; 
+} 
+
+img{ 
+    filter: blur(1px) 
+}
+
+.grid-container{
+    display: grid;
+   /* grid-template-columns: 1fr 1fr 1fr; determina quantas colunas a página terá */
+   /* grid-template-rows: 20% 70% 10%; determina quantas linhas a página terá */
+    height: 500px;
+    padding: 15px;
+    gap: 10px 20px;
+    grid-template-areas: 
+    'header header header'
+    'form form form'
+    'footer footer footer';
+}
+
+.item-1 {
+    /*background-color: rgba(52, 52, 52, 0.8);*/
+    text-align: center;
+    padding: 20px 10px 20px 10px;
+    font-size: 30px;
+    grid-area: header;
+    height: 20vh;
+  }
+
+h3{
+    text-align: top;
+}
+
+input{
+    padding: 10px;
+}
+.btn{
+    padding: 10px 75px 10px 75px;
+}
+button{
+    justify-items: center;
+}
+form{
+    background-color: rgba(72,72,72,0.4);
+    padding: 80px 20px;
+    border-radius: 0.9rem;
+
+
+}
+.item-2 { 
+    grid-area: form; 
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-3 { 
+    grid-area: footer;
+    /*background-color: rgb(20, 20, 20);*/
+    /*color: rgb(255, 255, 255);*/
+    text-align: center;
+    align-items: center;
+    padding: 15px;
+    /*height: 10px;*/
+}

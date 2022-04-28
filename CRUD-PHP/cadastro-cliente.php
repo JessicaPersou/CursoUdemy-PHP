@@ -19,12 +19,12 @@
 
     // VERIFICAÇÃO PARA A QUANTIDADE DE CARACTERES DO NOME 
     if(empty($nome)){
-        $erro = "Preencha o campo nome Corretamente!"; 
+        $erro = "Preencha o campo nome CORRETAMENTE!"; 
     }
 
     // VERIFICA SE O EMAIL É VALIDO USANDO A FUNÇÃO DO PHP
     if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){ 
-        $erro = "Preencha o campo e-mail Corretamente!";
+        $erro = "Preencha o campo e-mail CORRETAMENTE!";
     }
 
     /* 
