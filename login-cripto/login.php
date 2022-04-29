@@ -7,7 +7,7 @@ if(isset($_POST['email'])){
     $email = $_POST['email'];
     $senha = ($_POST['senha']);
 
-    $sql_code = "SELECT * FROM acesso WHERE email = '$email' LIMIT 1";
+    $sql_code = "SELECT * FROM acesso WHERE email = '$email' LIMIT 0,1";
     $sql_exec = $conn->query($sql_code) or die ($conn->error);
 
     $user = $sql_exec->fetch_assoc();

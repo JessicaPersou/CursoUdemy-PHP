@@ -1,10 +1,11 @@
 <?php
 
-include("conn/conn.php");
-
-$erro = false;
-
-if (count($_POST) > 0) {   //se for maior que zero ele mostra as variaveis salvas
+if (count($_POST) > 0) {  
+    
+    include("conn/conn.php");
+    
+    $erro = false;
+    //se for maior que zero ele mostra as variaveis salvas
     $nome = $_POST['nome'];
     $nascimento = $_POST['nascimento'];
     $telefone = $_POST['telefone'];
@@ -12,15 +13,21 @@ if (count($_POST) > 0) {   //se for maior que zero ele mostra as variaveis salva
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
     if (empty($nome)) {
-        die("<script>alert('Insira um nome Válido!');</script>");
+        die("<script>alert('Insira um nome Válido!')</script>");
     }
 
-    if (empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("Insira um e-mail Válido!");
+    if (empty($telefone) || strlen($telefone < 11)){
+        die("<script>alert('Insira um telefone válido!')</script>");
     }
 
     if (!empty($nascimento)) {
         $inverte = implode("-", array_reverse(explode("-", $nascimento)));
+    }else{
+        die("<script>alert('Insira uma data válida!')</script>");
+    }
+
+     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("<script>alert('Insira um email válido!')</script>");
     }
 
     if ($erro) {
@@ -32,6 +39,7 @@ if (count($_POST) > 0) {   //se for maior que zero ele mostra as variaveis salva
 
     if ($conn->query($sql) === TRUE) {
         echo "<script>alert('Usuário cadastrado com sucesso!)</script>";
+        unset($_POST);
     } else {
         echo "ERRO: $sql, ($conn->error)";
     }
@@ -59,24 +67,19 @@ if (count($_POST) > 0) {   //se for maior que zero ele mostra as variaveis salva
                 <h3>Cadastre-se:</h3>
                 <br>
                 <p>
-                    <label for="">Nome</label><br>
-                    <input name="nome" type="text">
+                    <input value="<?php if(isset($_POST['nome'])) echo $_POST['nome']; ?>" placeholder="Nome Completo" name="nome" type="text">
                 </p>
                 <p>
-                    <label for="">Data de Nascimento</label><br>
-                    <input name="nascimento" type="date">
+                    <input value="<?php if(isset($_POST['nascimento'])) echo $_POST['nascimento']; ?>" name="nascimento" type="date">
                 </p>
                 <p>
-                    <label for="">Telefone</label><br>
-                    <input name="telefone" type="text">
+                    <input value="<?php if(isset($_POST['telefone'])) echo $_POST['telefone']; ?>" placeholder="11 99999-9999" name="telefone" type="telefone">
                 </p>
                 <p>
-                    <label for="">E-mail</label><br>
-                    <input name="email" type="email">
+                    <input value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" placeholder="E-mail" name="email" type="email">
                 </p>
                 <p>
-                    <label for="">Senha</label><br>
-                    <input name="senha" type="password">
+                    <input value="<?php if(isset($_POST['senha'])) echo $_POST['senha']; ?>" placeholder="Senha" name="senha" type="password">
                 </p>
                 <p>
                     <input href="/login.php" class="btn" type="submit">

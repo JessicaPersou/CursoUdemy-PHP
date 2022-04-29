@@ -45,12 +45,10 @@ if (isset($_POST['email'])) {
             <form method="POST" action="">
                 <h3>Login</h3>
                 <p>
-                    <label for="">E-Mail</label><br>
-                    <input name="email" type="email">
+                    <input value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" placeholder="E-mail" name="email" type="email">
                 </p>
                 <p>
-                    <label for="">Senha</label><br>
-                    <input name="senha" type="password">
+                    <input placeholder="Senha" name="senha" type="password">
                 </p>
                 <p>
                     <input class="btn" type="submit">
