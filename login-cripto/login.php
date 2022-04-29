@@ -47,7 +47,7 @@ if(isset($_POST['email'])){
         <input type="email" name="email">
 
         <label for="senha">Senha</label>
-        <input type="text" name="senha">
+        <input type="password" name="senha">
 
         <button type="submit"><a href="cadastrar.php">Entrar</a></button>
     </form>    

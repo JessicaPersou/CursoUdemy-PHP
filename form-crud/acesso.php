@@ -7,6 +7,6 @@
     <title>Acesso</title>
 </head>
 <body>
-    <h1>Você entrou na página</h1>
+    <h1>Você esta logado!</h1>
 </body>
 </html>

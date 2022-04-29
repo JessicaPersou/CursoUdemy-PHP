@@ -8,20 +8,21 @@ if(isset($_POST['email'])){
     $senha = $_POST['senha'];
 
     $sql = "SELECT * FROM usuario WHERE email = '$email' LIMIT 1";
+    $exec = $conn->query($sql) or die($conn->connect_errno);
 
-    
-    if($conn->query($sql) === TRUE){
-        $usuario = $sql->fetch_assoc();
-        if(password_verify($senha, $usuario['senha'])){
+    $usuario = $exec->fetch_assoc();
+
+    if(password_verify($senha,$usuario['senha'])){
+        if(!isset($_SESSION)){
             session_start();
             $_SESSION['usuario'] = $usuario['id'];
-            header("Location: acesso.php");
+            header("Location:acesso.php");
         }
-    }else{
+    }else
         die($conn->error);
-    }
-
 }
+
+
 
 
 ?>

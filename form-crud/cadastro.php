@@ -11,25 +11,24 @@ if(count($_POST) > 0){   //se for maior que zero ele mostra as variaveis salvas
     $email = $_POST['email'];
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-    function f_alert(){
-        echo "<script>alert('Campo <b>Inválido<b>!)</script>";
-    }
-
     if(empty($nome)){
-        f_alert();
-        header("Location: cadastro.php");
-       //die("<script>alert('Insira um nome Válido!');</script>");
+       die("<script>alert('Insira um nome Válido!');</script>");
     }
 
     if(empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)){
-        //die("Insira um e-mail Válido!");
-        f_alert();
-        header("Location: cadastro.php");
+        die("Insira um e-mail Válido!");
+    }
+
+
+    if(!empty($nascimento)){
+        $inverte = implode("-",array_reverse(explode("-", $nascimento)));
     }
 
      if($erro){
         echo "ERRO: $erro";
     }
+
+
 
     $sql = "INSERT INTO usuario (nome, nascimento, telefone, email, senha, data) VALUES 
     ('$nome', '$nascimento', '$telefone', '$email', '$senha', NOW())" ;
