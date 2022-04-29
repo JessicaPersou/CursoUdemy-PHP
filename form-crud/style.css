@@ -43,14 +43,16 @@ input{
     width: 15rem;
 }
 
-.btn{
-    padding: 10px 75px 10px 75px;
+
+h3{
+    font-size: 30px;
 }
 
 a{
     text-decoration: none;
     color: aliceblue;
 }
+
 button{
     justify-items: center;
 }

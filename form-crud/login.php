@@ -43,6 +43,7 @@ if (isset($_POST['email'])) {
     <div class="grid-container">
         <div class="item-2">
             <form method="POST" action="">
+                <h3>Login</h3>
                 <p>
                     <label for="">E-Mail</label><br>
                     <input name="email" type="email">
