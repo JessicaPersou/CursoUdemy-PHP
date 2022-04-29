@@ -19,7 +19,7 @@ if(isset($_POST['email'])){
             $_SESSION['user'] = $user['id'];
             header("Location: cadastro.php");
         }else{
-            echo "Falha ao logar, verifique e-mail e senha!";
+            die("Falha ao logar, verifique e-mail e senha!");
         }
     }
 }
