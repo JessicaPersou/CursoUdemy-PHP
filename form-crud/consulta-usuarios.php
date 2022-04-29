@@ -53,7 +53,6 @@ $n_usuarios = $query_consulta->num_rows; // RETORNA O NÚMERO DE CLIENTES EXISTE
                 
                     $dc= date("d/m/Y H:i", strtotime($usuario['data']));
                 
-
                 ?>
                 <tr>
                     <td><?php echo $usuario['id']; ?></td>
@@ -63,8 +62,8 @@ $n_usuarios = $query_consulta->num_rows; // RETORNA O NÚMERO DE CLIENTES EXISTE
                     <td><?php echo $usuario['email']; ?></td>
                     <td><?php echo $dc; ?></td>
                     <td>
-                        <button><a href="editar-cliente.php?id=<?php echo $usuario['id']; ?>">Editar</a></button>
-                        <button><a href="deletar-cliente.php?id=<?php echo $usuario['id']; ?>">Deletar</a></button>
+                        <button><a href="editar-usuario.php?id=<?php echo $usuario['id']; ?>">Editar</a></button>
+                        <button><a href="deletar-usuario.php?id=<?php echo $usuario['id']; ?>">Deletar</a></button>
                     </td>
                 </tr>
             <?php }

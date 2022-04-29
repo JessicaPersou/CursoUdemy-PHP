@@ -9,13 +9,11 @@
         return preg_replace("/[^0-9]/", "", $str); 
     }
 
-// SE ALGUM ERRO EXISTIR ESSA VARIÁVEL MOSTRA
+    // SE ALGUM ERRO EXISTIR ESSA VARIÁVEL MOSTRA
     if(count($_POST) > 0){
 
-
-
     $erro = false;
-    $nome = $_POST['nome'];
+    $nome = $_POST['nom e'];
     $d_nascimento = $_POST['d_nascimento'];
     $email = $_POST['email'];
     $tel = $_POST['tel'];
