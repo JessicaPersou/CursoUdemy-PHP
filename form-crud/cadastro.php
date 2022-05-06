@@ -3,7 +3,8 @@
 if (count($_POST) > 0) {  
     
     include("conn/conn.php");
-    
+    include("lib/mail.php");
+
     $erro = false;
     //se for maior que zero ele mostra as variaveis salvas
     $nome = $_POST['nome'];
@@ -30,6 +31,13 @@ if (count($_POST) > 0) {
         die("<script>alert('Insira um email válido!')</script>");
     }
 
+   // if(strlen($_POST['senha'] >= 7)){
+      //  die("<script>alert('A senha deve ter 8 ou mais caracteres!')</script>");
+    //}
+
+
+    
+
     if ($erro) {
         echo "ERRO: $erro";
     }
@@ -38,8 +46,10 @@ if (count($_POST) > 0) {
     ('$nome', '$nascimento', '$telefone', '$email', '$senha', NOW())";
 
     if ($conn->query($sql) === TRUE) {
+        enviarMail($email, "Aviso de Conta Criada!", "<h1>Seja Bem-Vindo</h1>
+        <p>Parabéns, sua conta foi criada com sucesso</p>");
         echo "<script>alert('Usuário cadastrado com sucesso!)</script>";
-        unset($_POST);
+        unset($_POST); //limpa os campos digitados
     } else {
         echo "ERRO: $sql, ($conn->error)";
     }
@@ -80,6 +90,9 @@ if (count($_POST) > 0) {
                 </p>
                 <p>
                     <input value="<?php if(isset($_POST['senha'])) echo $_POST['senha']; ?>" placeholder="Senha" name="senha" type="password">
+                </p>
+                <p>
+                    <input value="<?php if(isset($_POST['senha'])) echo $_POST['senha']; ?>" name="arquivo" type="file">
                 </p>
                 <p>
                     <input href="/login.php" class="btn" type="submit">
