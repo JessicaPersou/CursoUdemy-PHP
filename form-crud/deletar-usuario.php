@@ -10,7 +10,7 @@ if(isset($_POST['confirmar'])){
 
     if($sql_query){?>
     <h1>Cliente deletado com sucesso!</h1>
-    <p><a href="consulta-usuario.php">Clique aqui</a> para voltar a lista de clientes.</p>
+    <p><a href="consulta-usuario.php">Clique aqui</a> para voltar a lista de usuários.</p>
 
     <?php
     die();
@@ -31,7 +31,7 @@ var_dump($_POST);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oxygen:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Deletar Clientes</title>
+    <title>Deletar Usuários</title>
 </head>
 <body>
     <header class="header">
@@ -45,6 +45,6 @@ var_dump($_POST);
 </main>
 </body>
 <footer class="footer">
-        © Jessica - 2022
+         Jessica ©  <?php echo date("Y");?>
     </footer>
 </html>

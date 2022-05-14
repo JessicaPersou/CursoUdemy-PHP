@@ -91,17 +91,17 @@ if (count($_POST) > 0) {
                 <p>
                     <input value="<?php if(isset($_POST['senha'])) echo $_POST['senha']; ?>" placeholder="Senha" name="senha" type="password">
                 </p>
+                <!--<p>
+                    <input value="<?php //if(isset($_POST['senha'])) echo $_POST['senha']; ?>" name="arquivo" type="file">
+                </p> -->
                 <p>
-                    <input value="<?php if(isset($_POST['senha'])) echo $_POST['senha']; ?>" name="arquivo" type="file">
-                </p>
-                <p>
-                    <input href="/login.php" class="btn" type="submit">
+                <button class="custom-btn btn-16">Cadastrar</button>
                 </p>
             </form>
         </div>
         <div class="item-3">
             <footer>
-                <p>Empresa © 2022</p>
+                <p>Jessica © <?php echo date("Y");?></p>
             </footer>
         </div>
     </div>

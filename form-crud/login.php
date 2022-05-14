@@ -58,7 +58,7 @@ if (isset($_POST['email'])) {
         </div>
         <div class="item-3">
             <footer>
-                <p>Empresa © 2022</p>
+                <p>Jessica ©  <?php echo date("Y");?></p>
             </footer>
         </div>
     </div>
