@@ -36,7 +36,7 @@ try {
 
     //Recipients
     $mail->setFrom('jessica.persou@gmail.com', 'Testando');
-    //$mail->addAddress('jessica.psousa@outlook.com', 'Jessica Sousa');     //Add a recipient
+    $mail->addAddress('jonatan.magrao92@gmail.com', 'Jonatan');     //Add a recipient
    // $mail->addAddress('adriano.fds@outlook.com', 'Adriano Siqueira');     //Add a recipient
    // $mail->addAddress('jeffrey.rodriigues@gmail.com', 'Jeffrey Rodrigues');     //Add a recipient
     //$mail->addAddress('ellen@example.com');               //Name is optional
